@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng. -->
+
+	<script type="text/javascript">
+		let a = +prompt("nhập vào số nguyên gồm 1 phần tử:");
+        	strA = a.toString();
+       	 	let arrayA = strA.split('');
+       	 	// console.log(arrayA);
+       	 	let newarrayA = arrayA.sort(function(a, b){return b - a});
+
+       	 	function sumTotal(){
+       	 		let sum = 0;
+       	 	    let avg ;
+       	 	    for(let i = 0 ; i< arrayA.length; i++ ){
+       	 		sum = sum + arrayA[i];
+       	 		// avg += sum/arrayA.length;
+       	 		
+       	 		
+       	 	    }
+       	 	  return sum;
+       	 	}
+       	 	sumTotal();
+
+
+       	 	document.write("mảng số nguyên:"+arrayA + "<br>");
+       	 	document.write("giá trị lớn nhất trong mảng: "+arrayA[0]+  "<br>");
+       	 	document.write("giá trị trung bình của các phần tử trong mảng: "+sumTotal());
+
+	</script>
+</body>
+</html>

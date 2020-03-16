@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nguyen_to</title>
+</head>
+<body>
+	<h3>Kiểm tra số nguyên tố</h3>
+	<p>Nhập số</p>
+	<input type="text" name="" id="mot">
+	<p id="Result"></p>
+	<button onclick="hien()">Kiểm tra</button>
+
+
+	<script type="text/javascript">
+		function checkPrimeNumber(n){
+			for (let i = 2; i <= Math.sqrt(n) ; i++){
+				if(n%i ==0)
+					return false;
+			}
+			return true;
+		}
+		function hien(){
+			let a = +document.getElementById("mot").value;
+			let sum = 0;
+			let N = 2;
+			document.getElementById('Result').innerHTML = '';
+			while (sum < a) {
+				if (checkPrimeNumber(N)) {
+					document.getElementById('Result').innerHTML += (" Số nguyên tố :" + N + "<br>");
+					sum++;
+				} N++;
+			}
+		}
+	</script>
+</body>
+</html>

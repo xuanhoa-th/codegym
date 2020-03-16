@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó. -->
+
+	<script type="text/javascript">
+		    let a = +prompt("nhập vào số nguyên gồm 1 phần tử:");
+        	strA = a.toString();
+       	 	let arrayA = strA.split('');
+
+
+    let max = arrayA[0];
+    let index = 0;
+    for (let j = 1; j < arrayA.length; j++) {
+        if (arrayA[j] > max) {
+            max = arrayA[j];
+            index = j;
+           
+        }
+    }
+     document.write("phần tử trong mảng:"+arrayA + "<br>");
+    document.write("phần tử có giá trị lớn nhất trong mảng:"+max + "<br>");
+    document.write("vị trí của phần tử trong mảng:"+index + "<br>");
+
+	</script>
+</body>
+</html>

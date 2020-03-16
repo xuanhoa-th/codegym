@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Từ điển</title>
+</head>
+<body>
+	<form>
+		Tiếng Anh <input type="text" name="" id="tiengAnh">
+		Tiếng Việt <input type="text" name="" id="vietnam" style=" ">
+	</form>
+	<br>
+	<button id="dictionary" onclick="TraDictionary()">Tra từ điển</button>
+<script type="text/javascript">
+
+	function TraDictionary(){
+		let English = ["Binary","Terminal","Switch"];
+	    let VietNam = ["Nhị phân"," Máy  trạm","Chuyển"];
+	    let keyword = document.getElementById("tiengAnh").value;
+	    let index = bykeyword(keyword,English);
+	if (index !== -1) {
+		document.getElementById("vietnam").value = VietNam[index] ;
+	} else{
+		document.getElementById("vietnam").value = "khong tim thay" ;
+	  }
+
+	}
+	function bykeyword(keyword,array){
+		for(let j = 0; j< array.length; j++){
+			if(keyword === array[j]){
+				return j;
+			}
+		}
+		return -1;
+	}
+</script>
+
+</body>
+</html>

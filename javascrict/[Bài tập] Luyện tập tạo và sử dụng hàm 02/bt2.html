@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được -->
+
+	<script type="text/javascript">
+		let a = +prompt("nhap vao canh a");
+		let b = +prompt("nhap vao canh b");
+		let c = +prompt("nhap vao canh c");
+		let s = "";
+		let p = "";
+		function triangleCircumference(a,b,c){
+			p = (a+b+c);
+
+			return p;
+		}
+		triangleCircumference(a,b,c);
+
+		function triangleArea(a,b,c,p){
+			s = Math.sqrt( (p*(p-a)*(p-b)*(p-c)) );
+			return s;
+		}
+		triangleArea(a,b,c,p);
+		alert("diện tích tam giác là: "+ s);
+		alert("chu vi tam giác là: "+ p);
+
+	</script>
+</body>
+</html>

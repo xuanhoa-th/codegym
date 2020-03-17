@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    tr, td {
+        border: 1px solid black;
+
+    }
+
+    td {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: normal;
+        color: white;
+    }
+    .color1{
+        background-color: blue;
+    }
+    .color2{
+        background-color: red;
+    }
+</style>
+<body>
+<input id="row" type="number" value="10"/>
+<input id="col" type="number" value="10"/>
+<table id="tables"></table>
+<script>
+    let myArray = [];
+    let nRow = 0, mCol = 0;
+    let turn = 1;
+
+    //1,2 khoi tao mang (bang)
+    function initTable() {
+        nRow = +document.getElementById("row").value;
+        mCol = +document.getElementById("col").value;
+        myArray = []; // khai bao mang 1 chieu
+        for (let i = 0; i < nRow; i++) { // tao ra n dong tuong duong i mang 1 chieu
+            myArray[i] = [];
+            for (let j = 0; j < mCol; j++) { // tao ra n cot tuong duong j phan tu
+                myArray[i][j] = "";
+            }
+        }
+        return myArray;
+    }
+
+    function showTable() { // in ra mang da tao duoc
+        let str ="";
+        for (let i = 0; i < myArray.length; i++) {
+            str += "<tr>";
+            for (let j = 0; j < myArray[i].length; j++) {
+                str += `<td class="cell" id="cell-${i}${j}" onclick="clickCell(this,${i},${j})"></td>`;
+            }
+            str += "</tr>";
+        }
+        document.getElementById("tables").innerHTML = str;
+    }
+
+    initTable();
+    showTable();
+
+    function clickCell(cell,x,y){
+        if (cell.innerHTML === ""){
+            if (turn === 1){
+                cell.innerHTML ='x';
+                cell.classList.add("color1");
+                turn = 2;
+            } else {
+                cell.innerHTML = "o";
+                cell.classList.add("color2");
+                turn = 1;
+            }
+        }
+        checkWin(cell,x,y);
+    }
+
+    function checkWin(cell,x,y) {
+        let count = checkNgang(cell, x, y);
+        let count1 = checkDoc(cell,x,y);
+        let count2 = checkCheoLen(cell,x,y);
+        let count3 = checkCheoXuong(cell,x,y);
+        if (count >= 5 || count1 >= 5 || count2 >= 5 || count3 >= 5){
+            setTimeout(function () {
+                alert("you win");
+            },500);
+        }
+    }
+    function checkNgang(cell,x,y) {
+        let count = 1;
+        let i = 1;
+        while (cell.innerHTML === getCell(x,y+i)){
+            count++;
+            i++;
+        }
+        while (cell.innerHTML === getCell(x,y-i)){
+            count++;
+            i++;
+        }
+        return count;
+    }
+
+    function checkDoc(cell,x,y) {
+        let count = 1;
+        let i = 1;
+        while (cell.innerHTML === getCell(x+i,y)){
+            count++;
+            i++;
+        }
+        while (cell.innerHTML === getCell(x-i,y)){
+            count++;
+            i++;
+        }
+        return count;
+    }
+
+    function checkCheoLen(cell,x,y) {
+        let count = 1;
+        let i = 1;
+        while (cell.innerHTML === getCell(x+i,y+i)){
+            count++;
+            i++;
+        }
+        while (cell.innerHTML === getCell(x-i,y-i)){
+            count++;
+            i++;
+        }
+        return count;
+    }
+
+    function checkCheoXuong(cell,x,y) {
+        let count = 1;
+        let i = 1;
+        while (cell.innerHTML === getCell(x+i,y-i)){
+            count++;
+            i++;
+        }
+        while (cell.innerHTML === getCell(x-i,y+i)){
+            count++;
+            i++;
+        }
+        return count;
+    }
+    function getCell(x,y) {
+        return document.getElementById("cell-"+x+y).innerHTML;
+    }
+</script>
+</body>
+</html>

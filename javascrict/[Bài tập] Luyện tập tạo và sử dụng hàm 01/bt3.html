@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +7,23 @@
 </head>
 <body>
 	<!-- Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng. Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số. -->
+	
 
 	<script type="text/javascript">
-		function show()
+		let a = +prompt("nhap vao so a");
+		let b = +prompt("nhap vao so b");
+		let sum = 0;
+		function show(a,b)
 		{
-			
+			if(a>b){
+				alert("so a lon hon so b");
+			} else if (a <= b) {
+				sum = a+b;
+				alert("tong cua 2 so la"+sum);
+			}
+			console.log(a);
 		}
+		show(a,b);
 	</script>
 	
 </body>

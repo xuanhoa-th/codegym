@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được. -->
+
+	<script type="text/javascript">
+		let a = + prompt("nhap so a :");
+		let s = 1;
+		function calfractoria(a){
+			for(let i = 1; i < a; i++ )
+				s += s*i;
+			return s;
+		}
+
+		function main(){
+			alert("giai thua cua "+ a + " là : "+ calfractoria(a) );
+		}
+		main();
+	</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+ <!-- 1. nhap so phan tu moi chieu cua mang 2 chieu 
+      2.khoi tao gia tri theo mang
+     3. hien mang
+     4. tinh tong hang cot
+     5. tim cac gia tri chan/le/chinh phuong/nguyen tong
+     6. xap xep chieu tu trai qua phai, tu tren xuong duoi
+     7.Xắp xếp mảng theo tổng hàng tổng cột -->
+	<script type="text/javascript">
+		
+	let myArray;
+	let nRow, nColum;
+	function initArray(){
+		nRow = +prompt("nhap so dong:");
+		nColum = +prompt("nhap so cot:");
+		myArray = new Array(nRow);
+		for(let i=0; i<nRow;i++){
+			myArray[i] = new Array(nColum);
+			for(let j=0; j<nColum;j++)
+				myArray[i][j] = Math.round(Math.random()*1000);
+		}
+
+	}
+	function showArray(){
+		let i,j;
+		document.write("<table border = '1'>");
+		for(i=0; i<nRow;i++)
+		{
+			for(j=0;j<nColum;j++)
+				document.write("<td>"+myArray[i][j]+"</td>");
+			document.write("</tr>");
+		}
+		document.write("</table>");
+	}
+	function calRowSum(rowIndex){
+		if(rowIndex <= 0 || rowIndex >= nRow)
+			return 0;
+		let sum = 0;
+		for(let j = 0; j< nColum;j++)
+			sum += myArray[rowIndex][j];
+		return sum;
+	}
+	function calcolum(columIndex){
+		if(columIndex <= 0 || columIndex >= nColum)
+			return 0;
+		let sum = 0;
+		for(let i = 0; i < nRow; i++)
+			sum += myArray[columIndex][i];
+		return sum;
+	}
+	function totalsum(){
+		let i,j;
+		let sum = 0;
+		for(i =0; i< nRow;i++)
+			for(j=0;j< nColum; j++)
+				if(myArray[i][j] %2 ==0) {
+					sum += myArray[i][j];
+				
+				}
+				return sum;
+	}
+	function totalsumle(){
+		let i,j;
+		let sum = 0;
+		for(i =0; i< nRow;i++)
+			for(j=0;j< nColum; j++)
+				if(myArray[i][j] %2 !==0) {
+					sum += myArray[i][j];
+				
+				}
+				return sum;
+				console.log(sum);
+	}
+	initArray();
+	showArray();
+	document.write("tong hang 1 la" + calcolum(1)+ "<br>");
+	document.write("tong hang 2 la" + calRowSum(2)+ "<br>");
+	document.write("tong gia tri chan la" + totalsum()+ "<br>");
+	document.write("tong gia tri le la" + totalsumle()+ "<br>");
+
+
+
+
+	</script>
+</body>
+</html>

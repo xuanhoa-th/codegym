@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <style type="text/css">
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+             text-align: center;
+        }
+        tr,td {
+            border: 1px solid black;
+        }
+        td{
+            width: 30px;height: 30px;
+            text-align: center;
+        }
+    </style>
+    <table id="table">
+    </table>
+    <script type="text/javascript">
+            const COlS = 10;
+            const ROWS = 10;
+            let PLAYED = 0;
+            let arr = [];
+            let isGameOver = false;
+
+            function Caro_table(){
+                let tb = '';
+                for(let i=0;i<15;i++){
+                    tb += "<tr>"
+                    arr[i] = [];
+                    for(let j=0; j<15;j++){
+                        // arr[i][j] = "*";
+                        tb += '<td class="cell" id="cell-' + i + j + '" onclick = "click_Caro(this,' + i + ',' + j + ')"></td>';
+                    }
+                    tb +="</tr>";
+                }
+                document.getElementById("table").innerHTML = tb;
+            }
+            Caro_table();
+            let turn = 1;
+            function click_Caro(caro,x,y){
+                if (isGameOver) {
+                    return;
+                }
+
+                if(!caro.innerHTML){
+                    if (caro.innerHTML === '') {
+                    if (turn === 1) {
+                        caro.innerHTML = "x";
+                        turn = 2;
+                    } else {
+                        caro.innerHTML="o";
+                        turn = 1;
+                    }
+                  }
+                }
+                checkWin(caro, x, y);
+            }
+ function checkWin(caro, x, y) {
+    // ngang
+    var i = 1;
+    var count = 1;
+    while ((y + i) < COlS && arr[x][y + i] === caro.innerHTML) {
+        i++;
+        count++;
+    }
+    var j = 1;
+    while (y - j >= 0 && arr[x][y - j] === caro.innerHTML) {
+        j++;
+        count++;
+        console.log(count);
+    }
+    gameOver(count);
+    //doc
+    var i = 1;
+    var count  =1;
+    while ((x + i) < ROWS && arr[x + i][y] === caro.innerHTML) {
+        i++;
+        count++;
+    }
+    var j = 1;
+    while (x - j >= 0 && arr[x - j][y] === caro.innerHTML) {
+        j++;
+        count++;
+    }
+    gameOver(count);
+    //cheo trai
+    var i = 1;
+    var j = 1;
+    var count = 1;
+    while ((y + j < COlS) && (x + i < ROWS) && (arr[x + i][y + j] === caro.innerHTML)) {
+        i++;
+        j++;
+        count++;
+    }
+    gameOver(count);
+    var i = 1;
+    var j = 1;
+    while ((y - j >= 0) && (x - i >= 0) && (arr[x - i][y - j] === caro.innerHTML)) {
+        i++;
+        j++;
+        count++;
+    }
+    gameOver(count);
+    // cheo phai
+    // var i = 1;
+    // var j = 1;
+    // var count = 1;
+    // while ((y + j > COlS) && (x + i > ROWS) && (arr[x + i][y + j] === caro.innerHTML)) {
+    //     i++;
+    //     j++;
+    //     count++;
+    // }
+    // gameOver(count);
+    // var i = 1;
+    // var j = 1;
+    // while ((y - j >= 0) && (x - i >= 0) && (arr[x - i][y - j] === caro.innerHTML)) {
+    //     i++;
+    //     j++;
+    //     count++;
+    // }
+    // gameOver(count);
+    return true;
+}
+
+function gameOver(count) {
+    if (count === 5) {
+        alert("Game over");
+        isGameOver = true;
+    }
+}
+// drawGameBoard();
+    </script>
+</body>
+</html>

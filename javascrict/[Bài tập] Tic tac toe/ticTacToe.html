@@ -107,24 +107,24 @@
         count++;
     }
     gameOver(count);
-    // cheo phai
-    // var i = 1;
-    // var j = 1;
-    // var count = 1;
-    // while ((y + j > COlS) && (x + i > ROWS) && (arr[x + i][y + j] === caro.innerHTML)) {
-    //     i++;
-    //     j++;
-    //     count++;
-    // }
-    // gameOver(count);
-    // var i = 1;
-    // var j = 1;
-    // while ((y - j >= 0) && (x - i >= 0) && (arr[x - i][y - j] === caro.innerHTML)) {
-    //     i++;
-    //     j++;
-    //     count++;
-    // }
-    // gameOver(count);
+    //cheo phai
+    var i = 1;
+    var j = 1;
+    var count = 1;
+    while ((y + j > COlS) && (x + i > ROWS) && (arr[x + i][y + j] === caro.innerHTML)) {
+        i++;
+        j++;
+        count++;
+    }
+    gameOver(count);
+    var i = 1;
+    var j = 1;
+    while ((y - j >= 0) && (x - i >= 0) && (arr[x - i][y - j] === caro.innerHTML)) {
+        i++;
+        j++;
+        count++;
+    }
+    gameOver(count);
     return true;
 }
 

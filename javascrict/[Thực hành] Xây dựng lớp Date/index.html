@@ -15,10 +15,7 @@
         this.month = month;
 
         this.year = year;
-
- };
-		// Bước 2: Xây dựng phương thức trả về ngày, tháng, năm
-		this.getDay = function() {
+        		this.getDay = function() {
     return this.day;
 }
 this.getMonth = function() {
@@ -38,6 +35,10 @@ this.setMonth = function(month) {
 this.setYear = function(year) {
     this.year  = year;
 }
+
+ };
+		// Bước 2: Xây dựng phương thức trả về ngày, tháng, năm
+
 		// Bước 4: Sử dụng lớp vừa tạo. Tạo đối tượng date với ngày:2, tháng:2, năm: 2007:
 
 		let date = new MyDate(2, 2, 2007);

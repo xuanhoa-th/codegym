@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #myForm{
+            display: none;
+        }
+
+    </style>
+    <script>
+        function showForm(){
+            document.getElementById("myForm").style.display = "block";
+
+        }
+        function closeForm(){
+            document.getElementById("myForm").style.display = "none";
+
+        }
+    </script>
+</head>
+<body>
+<h3>THÔNG TIN SINH VIÊN</h3>
+<form action="#" method="p" id="myForm">
+        <table>
+            <tr>
+                <td width="100">Họ tên</td>
+                <td><input type="text" name="fullname" value="Nguyễn Văn An"></td>
+            </tr>
+            <tr>
+                <td>Ngày sinh</td>
+                <td><input type="date" name="DOB"></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td>  <input type="radio" name="sex"> Nam
+                    <input type="radio" name="sex"> Nữ <br></td>
+            </tr>
+            <tr>
+                <td>Quê quán</td>
+                <td> <select>
+                    <option value="HN"> Hà Nội</option>
+                    <option value="HP"> Hải Phòng</option>
+                    <option value="ND"> Nam Định</option>
+                    <option value="BN"> Bắc Ninh</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Sở thích</td>
+                <td> <input type="checkbox" name="hobby[]" value="1"> Thể thao
+                    <input type="checkbox" name="hobby[]" value="2"> Du lịch
+                    <input type="checkbox" name="hobby[]" value="4"> Phim ảnh</td>
+            </tr>
+            <tr>
+                <td>Ảnh thẻ</td>
+                <td> <input type="file" name="avatar"></td>
+            </tr>
+
+
+            <tr>
+                <td>Tên đăng nhập</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>Mật khẩu</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+
+            <tr>
+                <td width="100">Mô tả thêm</td>
+                <td><textarea name="description">abc</textarea></td>
+            </tr>
+
+        <tr>
+            <td width="100"></td>
+            <td><input type="submit" value="Gửi">
+                <input type="reset" value="Nhập lại">
+                <input type="button" value="Đóng" onclick="closeForm()"</td>
+        </tr>
+    </table>
+</form>
+<h3>DANH SÁCH SINH VIÊN</h3>
+<button onclick="showForm()">Thêm sinh viên</button><br>
+<table border="1">
+    <tr>
+        <th>STT</th>
+        <th>Mã SV</th>
+        <th>Họ tên</th>
+        <th>Ngày sinh</th>
+        <th>Quê quán</th>
+        <th>Tên đăng nhập</th>
+        <th>Thao tác</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>ABC123</td>
+        <td>Nguyen Van An</td>
+        <td>01/01/2000</td>
+        <td>Ha Noi</td>
+        <td>AnNV123</td>
+        <td>Sửa | Xoá</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>ABC135</td>
+        <td>Tran Thi Binh</td>
+        <td>01/11/2001</td>
+        <td>Nam Dinh</td>
+        <td>BinhTT123</td>
+        <td>Sửa | Xoá</td>
+    </tr>
+</table>
+
+
+</body>
+</html>

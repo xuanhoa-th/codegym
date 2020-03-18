@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Danh sach san pham</title>
+	<!-- <link rel="stylesheet" type="text/css" href="danh_sach.css"> -->
+</head>
+<body>
+	<div class="ma" id="myForm" style="width: 505px;margin-left: 527px; display: none; ">
+		<div align="center"><h2 ><b>NHẬP THÔNG TIN HÀNG HÓA</b></h2></div>
+	<div class="form_menu" >
+		<form action="#" method="POST">
+			<fieldset style="background: #c5dfff;">
+				<table  >
+				<tr>
+					<td >
+						<button type="button">
+      					<img src="https://sachxanh.vn/images/logos/1/logo-sach-xanh.png" width="100px"/>
+  						</button>
+					</td>
+				</tr>
+				
+				<tr height="40px">
+					<td>Tên vật tư,hàng hóa</td>
+					<td><input type="text" name=""></td>
+				</tr>
+				<tr height="40px">
+					<td>Đơn giá mua</td>
+					<td><input type="text" name=""></td>
+				</tr>
+
+				<tr height="40px">
+					<td>Tiêu chuẩn</td>
+					<td><input type="checkbox" name=""> VietGap <input type="checkbox" name="">TCVN <input type="checkbox" name="">TKNL</td>
+				</tr>
+
+				<tr height="40px">
+					<td>Số lượng</td>
+					<td><input type="text" name="" ></td>
+				</tr>
+				<tr height="40px">
+					<td>Xuất sứ</td>
+					<td><input type="text" name="" ></td>
+				</tr>
+				<tr height="40px">
+					<td>Kho</td>
+					<td><select>
+					<option>Tùy chọn</option>
+					<option>Kho Hà Đông , Hà nội</option>
+					<option>Kho Việt Trì, Phú Thọ</option>
+					<option>Kho Ninh Kiều, Cần Thơ</option>
+					<option>Kho Kiến An, Hải Phòng</option>
+					</select></td>
+				</tr>
+				<tr height="40px">
+					<td ></td>
+					<td align="center">
+					<input type="reset" name="" value="Reset" style="color: red;">
+					<input type="submit" name="" value="Save " style="color: #0066ff;">
+					<!-- <input type="button" value="Đóng" onclick="closeForm()"> -->
+					<a href="OPP.html" onclick="closeForm()" width="10" style="color: #ce0909;border: 1px solid #8b8989;background: white;text-decoration: none;" >Close</a>
+					
+				</td>
+				</td>
+				</tr>
+				<tr>
+					<td><input name="secret" value="abcg124faasfjh149dfd" type="hidden"></td>
+				</tr>
+
+			</table>
+		</fieldset>
+	</form>
+	</div>	
+	</div>
+
+	<!-- ----danh-sach-san-pham---- -->
+	<table border="1" width="100%" cellspacing="10" bgcolor="#fef6e3" id="my_table" style="border-collapse: collapse; ">
+		<caption><h2 style="padding: 20px">Danh sách sản phẩm</h2></caption>
+		<tr >
+			<th >STT</th>
+			<th width="70" height="50" >Tên hàng hóa</th>
+			<th>Tiêu chuẩn</th>
+			<th>Số lượng</th>
+			<th>Xuất sứ</th>
+			<th>Ghi chú</th>
+			<th>Kho</th>
+			<th>Thành tiền(VNĐ)</th>
+			<th colspan="2">Thao tác</th>
+
+		</tr>
+
+		<tr >
+			<th id="stt"></th>
+			<th id="name"></th>
+			<th id="TieuChuan"></th>
+			<th id="soLuong"></th>
+			<th id="XuatXu">Úc</th>
+			
+			<th id="Kho">Kho Hà Đông,Hà Nội</td>
+			<th id="ThanhTien"></th>
+			<th><button>Sửa</button> <button>Xóa</button> </th>
+			<th rowspan ="6" align="center"><button onclick="showForm()">Thêm sản phẩm</button></th>
+	
+		</tr>
+		
+	</table>
+
+
+
+
+
+
+
+
+
+
+	<script src="app.js"></script>
+</body>
+</html>

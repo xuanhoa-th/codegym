@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<!-- /* 1. tao lop student cac sinh vien
+		2. tao danh sach cac doi tuong sinh vien
+		3. hien thi danh sach sinh vien
+		4. sap xep chieu tang dan cua diem trung binh.
+		BTVN TICH HOP VAO BAI THUC HANH 3 TAO GIAO DIEN.
+		2.XAY DUNG GIAO DIEN QUAN LY SAN PHAM
+		*/ -->
+
+		<script type="text/javascript">
+			function Student(studentId, fistName, lastName, className, mathscore,physcore,cheScore){
+				this.studentId =studentId;
+				this.fistName =fistName;
+				this.lastName =lastName;
+				this.studentId =studentId;
+				this.className =className;
+				this.mathscore =mathscore;
+				this.physcore =physcore;
+				this.cheScore =cheScore;
+				this.getStudentId = function(){
+					return this.studentId;
+				}
+
+				this.getAverageScore = function(){
+					return (this.mathscore+this.physcore+this.cheScore)/3;
+				}
+				this.show = function(){
+					document.write("ma sinh vien:" + this.studentId  + "<br>");
+					document.write("Ho ten:" + this.lastName + " " + this.fistName + "<br>");
+					document.write("lop:" + this.className  + "<br>");
+					document.write("diem toan:" + this.mathscore  + "<br>");
+					document.write("diem ly:" + this.physcore  + "<br>");
+					document.write("diem hoa:" + this.cheScore  + "<br>");
+					document.write("trung binh:" + this.getAverageScore()  + "<hr>");
+				}
+			}
+			const MAX = 10;
+			let studentList = new Array();
+
+			function intStudentlist(){
+				for(let i =0 ; i< MAX; i++)
+				{
+					let studentId = "CG" + i;
+					let firstName = Math.random().toString(36).substring(10);
+					let lastName = Math.random().toString(36).substring(5);
+					let className = " c2002h "+Math.random().toString(36).substring(2);
+					let mathscore = Math.floor(Math.random()*10);
+					let physcore = Math.floor(Math.random()*10);
+					let cheScore = Math.floor(Math.random()*10);
+
+					let sv = new Student(studentId,firstName,lastName,className,mathscore,physcore,cheScore);
+					studentList[i] = sv;
+				}
+			}
+			function showStudenList(){
+				for( let i = 0; i< MAX ; i++)
+					studentList[i].show();
+			}
+			function sortStudentList(){
+				studentList.sort(function(sv1,sv2){
+					return sv1.getAverageScore() - sv2.getAverageScore();
+				})
+			}
+
+
+			function main(){
+				// let sv1 = new Student("021545","van an","nguyen","c20h2",10,9,6);
+				// let sv2 = new Student("021545","van ","ha","c20h2",9,9,6);
+				// sv1.show();
+				// sv2.show();
+				intStudentlist();
+				showStudenList();
+				documen.write("<hr> xap xep");
+				sortStudentList();
+				showStudenList();
+
+			}
+			main();
+		</script>
+</body>
+</html>

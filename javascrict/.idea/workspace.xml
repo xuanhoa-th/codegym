@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c48890c-e28f-454d-ad05-89f3c3bbbf65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../bai tap tren lop/bai12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -34,6 +35,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583986798489</updated>
       <workItem from="1583986800204" duration="3000" />
+      <workItem from="1584605808382" duration="8110000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,37 @@
+.mobile {
+    width: 266px;
+    height: 187px;
+    background-color: aquamarine;
+}
+
+div#iphone-name {
+    border: 1px solid black;
+}
+
+div#iphone-inbox {border: 1px solid black;height: 78px;}
+
+div#iphone-outbox {
+    height: 40px;
+    border: 1px solid black;
+}
+
+.mobile2 {
+    margin-left: 401px;
+    float: left;
+    background: aqua;
+    height: 248px;
+    width: 266px;
+    position: relative;
+    margin: 0px 0px 50;
+    /* margin-bottom: 29px; */
+}
+
+div#samsung-inbox {
+    border: 1px solid black;
+    height: 50px;
+}
+
+div#samsung-outbox {
+    height: 50px;
+    border: 1px solid black;
+}

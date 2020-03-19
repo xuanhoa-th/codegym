@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<!-- nhap một xâu kí tự và chuẩn hóa xâu
+	-Không có ký tụ trắng ở đầu và cuối xâu
+	-không có nhiều dấu cách liên tiếp nhau
+	-Chi đầu mỗi kí tự được viết ra
+	vc: NGuyễn vĂn   AN => Nguyễn Văn An. -->
+
+	<script type="text/javascript">
+		function normalizeString(str){
+			let a = str.split(" ");
+			// alert(a.join());
+			let b = new Array();
+			for(let i = 0; i< a.length; i++)
+				if (a[i].length > 0) {
+					b.push(a[i]);
+				}
+				let tmp = b.join("");
+				//viet hoa chu kai dau.
+				let tmpup = tmp.toUpperCase();
+
+				tmp = tmp.toLowerCase();
+				tmp = tmpup.charAt(0)+ tmp.substring(1, tmp.length); 
+				for(i=0; i < tmp.length; i++)
+					if (tmp.charAt(i) == '') 
+						tmp = tmpup.substring(0, i+1)+ tmpup.charAt( i+1) + tmp.substring(i+2, tmp.length);
+
+				return tmp;
+		}
+		normalizeString("NGuyễn vĂn   AN");
+	</script>
+	
+</body>
+</html>

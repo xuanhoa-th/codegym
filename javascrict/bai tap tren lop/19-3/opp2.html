@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// let d = new Date();
+		// document.write("Hôm nay là :"+ d);
+		function getDay(){
+			const thu = ["chu nhat","thu 2 ","thu3", "thu 4","thu5","thu 6","thu7"];
+			let d = new Date();
+			let ind = d.getDay();
+
+			return thu[ind];
+		}
+		document.write("Hom nay la:"+getDay());
+	</script>
+</body>
+</html>

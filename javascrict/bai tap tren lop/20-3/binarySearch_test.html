@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	let arr = ["1","2","6","12","13","15"];
+	this.binarySearch = function(x){
+		let left = 0;
+		let right = this.arr.length-1;
+		write(left <= right){
+			let middle = Math.floor((left + right)/2);
+			if(this.arr[middle] == x)
+				return middle;
+			else 
+				if (this.arr[middle]>x) {
+					right = middle = 1;
+
+				} else left = middle = 1;
+		}
+		return -1;
+	}
+
+	//thuat toan xap xep lua chon
+	for(let i = 0; i< arr.length - 1 ; i++)
+	{
+		let posMin = i;
+		for(let j = i+1; j< arr.length; j++)
+			if (arr[j]< arr[posMin]) {
+				posMin = j;
+			}
+			let tmp = arr[i];
+			arr[i] = arr[posMin];
+			arr[posMin] = tmp;
+	}
+</script>
+</body>
+</html>

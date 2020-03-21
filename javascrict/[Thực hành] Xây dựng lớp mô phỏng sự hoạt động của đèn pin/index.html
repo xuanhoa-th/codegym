@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="flash">Flash</div>
+<button id="click">Toggle Status</button>
+<button id="on">On Status</button>
+<button id="off">Off Status</button>
+<script>
+    /*
+class Bettery {
+    constructor() {
+        this.status = false;
+        this.elFlash = document.querySelector('#flash'); // object den
+        this.elClick = document.querySelector('#click'); // object button
+        this.regvent();
+    }
+    regvent = function () {
+        this.elClick.addEventListener('click', () => {
+            this.status = !this.status;
+            this.elFlash.textContent  = this.status ? 'on' : 'off';
+        });
+    }
+}
+let a = new Bettery();
+*/
+    let Bettery = function(a, b){
+        document.querySelector('#flash');
+        this.status = false;
+        this.elFlash = document.querySelector('#flash'); // object den
+        this.elClick = document.querySelector('#click'); // object button
+
+        this.elOn = document.querySelector('#on'); // object on
+
+        this.elOff = document.querySelector('#off'); // object off
+
+        this.regvent();
+    }
+    Bettery.prototype.regvent = function () {
+        this.elClick.addEventListener('click', () => {
+            this.status = !this.status;
+            this.changerStatus();
+        });
+
+        this.elOn.addEventListener('click', () => {
+            this.turnOn();
+        });
+
+        this.elOff.addEventListener('click', () => {
+            this.turnOff();
+        });
+    }
+    Bettery.prototype.changerStatus = function () {
+        this.elFlash.textContent  = this.status ? 'on' : 'off';
+    }
+    Bettery.prototype.turnOn = function () {
+        this.status = true;
+        this.changerStatus();
+    };
+
+    Bettery.prototype.turnOff = function () {
+        this.status = false;
+        this.changerStatus();
+    }
+let a = new Bettery();
+console.log('Kiem tra bin:', a);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const MAX = 100;
+    function MyArray() {
+        this.arr = new Array(MAX);
+        this.init = function () {
+            for (let i =0; i< MAX; i++)
+                this.arr[i] = Math.round(Math.random()*1000);
+        }
+        //hien mang:
+        this.show = function () {
+
+                document.write(this.arr.join(" , "));
+        }
+        //tim kiem tuan tu
+        this.frequentSearch = function(x) {
+            let resultArray = new Array1();
+            for(let i = 0; i< this.arr.length; i++)
+                if (this.arr[i] === x)
+                    resultArray.push[i];
+                return resultArray;
+        }
+        function main() {
+            let myArr = new MyArray();
+            myArr.init();
+            myArr.show();
+            let x = 123;
+            document.write("vi tri:" + x + "trong danh sach la :" + myArr.frequentSearch(x));
+            let r = this.frequentSearch(x);
+            if (r.length === 0)
+                 document.write("khong tim thay");
+            else document.write("ket qua la:" + r.join(" , "));
+        }
+        main();
+
+    }
+</script>
+</body>
+</html>

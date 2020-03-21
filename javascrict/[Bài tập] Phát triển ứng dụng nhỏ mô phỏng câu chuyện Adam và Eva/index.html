@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="eating()">Eat</button>
+<script>
+    class Human{
+        constructor(name,age,weight,gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.weight = weight;
+            this.height = 10;
+        }
+        eat(food){
+            if(!food.checkEmpty()){
+                food.weight--;
+                this.weight++;
+            } else {
+                this.say("Hết táo mất rồi");
+            }
+        }
+        say(content){
+            alert(content);
+        }
+    }
+    class Food{
+        constructor(weight) {
+            this.weight = weight;
+        }
+        checkEmpty(){
+            return (this.weight<= 0)?true:false;
+        }
+    }
+    let Adam = new Human("Adam",18,45);
+    let Eva = new Human("Eva",12,50);
+    let apple = new Food(10);
+    Adam.say("Mình cùng ăn táo nhé!!!");
+    function eating() {
+        Adam.eat(apple);
+        Eva.eat(apple);
+
+        alert("Adam" + Adam.weight);
+        alert("apple" + apple.weight);
+        alert("Eva" + Eva.weight);
+        // console.log("Adam" + Adam.weight);
+        // console.log("apple" + apple.weight);
+        // console.log("Eva" + Eva.weight);
+
+    }
+</script>
+</body>
+</html>

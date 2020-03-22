@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <canvas id="myCanvas" width="700" height="500" style="border:1px solid #d3d3d3; background-color: #bce5e5; margin-left: 30">
+     Your browser does not support the HTML5 canvas tag.</canvas> -->
+	<div id="game"></div>
+     <script type="text/javascript">
+     	function Car(image,top,bottom,left,right,size,speed){
+     		this.image = image;
+     		this.top = top;
+     		this.bottom = bottom;
+     		this.left = left;
+     		this.right = right;
+     		this.size = size;
+     		this.speed = speed;
+
+     		this.getCarElement = function(){
+     			return '<img width="'+ this.size + '"' +
+     					' height="'+ this.size + '"' +
+     					' src="' + this.image +'"' +
+     					' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+     		           }
+     		this.moveTop = function(){
+     			this.bottom += speed +'px';
+     			console.log(this.bottom);
+     		}		
+     	}
+
+     	let car = new Car('car.png',600,20,700,20,100,20);
+     	function start(){
+
+     		document.getElementById('game').innerHTML = car.getCarElement();
+     		setTimeout(start, 500)
+
+     	}
+     	start();
+     </script>
+</body> 
+</html>

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c48890c-e28f-454d-ad05-89f3c3bbbf65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ly thuyet 1/opp_a_hoang.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/[Bài tập] Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/[Bài tập] Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +47,7 @@
       <workItem from="1584662598776" duration="11464000" />
       <workItem from="1584685797536" duration="6807000" />
       <workItem from="1584756061457" duration="3724000" />
+      <workItem from="1584772870133" duration="722000" />
     </task>
     <servers />
   </component>

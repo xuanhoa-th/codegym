@@ -1,7 +1,7 @@
 
 function Hero(image, top, left, size) {
     this.image = image;
-    this.top = top;
+    this.top = top; 
     this.speed = 20;
     this.left = left;
     this.size = size;
@@ -53,6 +53,6 @@ function start() {
         hero.moveUp();
     }
     document.getElementById('game').innerHTML = hero.getHeroElement();
-    setTimeout(start, 40)
+    setTimeout(start, 50)
 }
 start();

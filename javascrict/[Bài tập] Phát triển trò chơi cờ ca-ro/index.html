@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    td {
+        width: 30px;
+        height: 30px;
+        border: 1px solid blue;
+    }
+
+    table {
+        border-collapse: collapse;
+        border: 1px solid blue;
+
+    }
+</style>
+<table id="tables">
+</table>
+<script type="text/javascript">
+    let Caro = function (cell) {
+        this.cell = cell;
+
+        this.initTable = function () {
+            let arr = [];
+            for (let i = 0; i <= this.cell; i++) {
+                arr[i] = [];
+                for (let j = 0; j <= this.cell; j++) {
+                    arr[i][j] = "";
+                }
+            }
+            return arr;
+        };
+        this.getTable = function () {
+
+            let str = "";
+            for (let i = 0; i < this.initTable().length; i++) {
+                str += "<tr>";
+                for (let j = 0; j < this.initTable().length; j++) {
+                    str += "<td></td>";
+                }
+                str += "</tr>";
+            }
+            document.getElementById('tables').innerHTML = str;
+        };
+    };
+
+    let caro = new Caro(20);
+    // function show(){
+    // 	document.getElementById('tables').innerHTML = caro.getTable();
+    // }
+    // show();
+    caro.getTable();
+
+</script>
+</body>
+</html>

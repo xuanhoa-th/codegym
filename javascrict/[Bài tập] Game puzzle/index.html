@@ -30,7 +30,7 @@
 	 		let imgSrc = document.getElementById(index);
 	 		let number = +imgSrc.alt;
 	 		(number<6) ? number++ : number = 1;
-	 		imgSrc.alt = "images/screenshot_" + number + ".png";
+	 		imgSrc.src = "images/screenshot_" + number + ".png";
 	 		imgSrc.alt = '' + number;
 	 		checkFullImg();
 	 	}

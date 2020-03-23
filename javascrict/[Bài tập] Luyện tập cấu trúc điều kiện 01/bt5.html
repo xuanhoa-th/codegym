@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ? -->
+	
+	<script type="text/javascript">
+		let a = +prompt("Nhập điểm kiểm tra: ");
+		let b = +prompt("điểm thi giữa kỳ: ");
+		let c = +prompt("Nhập điểm thi cuối kỳ: ");
+
+		let tb = (a+b+c)/2;
+		if(tb>8.5){
+			alert("Xếp hạng học lực giỏi");
+		} else if (tb>=6.5&& tb <8.5) {
+			alert("Xếp hạng học lực khá");
+		} else if (tb <=6.5&& tb>5) {
+			alert("Xếp hạng học lực trung bình");
+		} else {
+			alert("Xếp hạng học lực yếu");
+		}
+	</script>
+</body>
+</html>

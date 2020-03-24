@@ -35,17 +35,30 @@
             return arr;
         };
         this.getTable = function () {
-
             let str = "";
             for (let i = 0; i < this.initTable().length; i++) {
                 str += "<tr>";
                 for (let j = 0; j < this.initTable().length; j++) {
-                    str += "<td></td>";
+                    str += `<td class="cell" id="cell-${i}${j}" onclick="clickCell(this,${i},${j})"></td>`;
                 }
                 str += "</tr>";
             }
             document.getElementById('tables').innerHTML = str;
         };
+        this.clickCell = function(cell,x,y){
+            if (this.cell.innerHTML === ""){
+                if (turn === 1){
+                    this.cell.innerHTML ='x';
+                    this.cell.classList.add("color1");
+                    turn = 2;
+                } else {
+                    this.cell.innerHTML = "o";
+                    this.cell.classList.add("color2");
+                    turn = 1;
+                }
+            }
+            // checkWin(cell,x,y);
+        }
     };
 
     let caro = new Caro(20);

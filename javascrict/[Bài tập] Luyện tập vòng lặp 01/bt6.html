@@ -7,13 +7,12 @@
 <body>
 	<!-- Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên. -->
 	<script type="text/javascript">
-		
-		for(let i = 1; i<= 30; i++){
-			if(i%7 === 0){
-				let sum =0;
-				sum = sum+ i;
+		let n = +prompt("Nhập vào số a:")
+		let sum =0;
+		for(let i = 1; i<=n; i++){
+			let tich = i*7;
+			sum += tich;
 				console.log("tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên là:"+sum);
-			}
 		}
 	</script>
 </body>

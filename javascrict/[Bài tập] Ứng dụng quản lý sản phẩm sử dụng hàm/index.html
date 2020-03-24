@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<!-- 	Hướng dẫn
+Bước 1: Tạo một trang HTML với các thẻ cơ bản
+
+Bước 2: Tạo một mảng chứa danh sách sản phẩm
+
+Bước 3: Xây dựng các hàm hiển  thị danh sách sản phẩm, thêm một sản phẩm vào danh sách, sửa tên sản phẩm, xoá sản phẩm.
+
+Bước 4: Gọi hàm hiển thị danh sách sản phẩm
+
+Tạo một mảng lưu trữ tên của sản phẩm
+Sử dụng vòng lặp để hiển thị danh sách sản phẩm trên một bảng. Bảng này có 3 cột, cột đầu tiên là số thứ tự, cột thứ 2 là tên của sản phẩm, cột thứ 3 chứa nút để xoá sản phẩm.
+Bước 5: Gọi hàm thêm một sản phẩm vào danh sách
+
+Tạo một form với một ô nhập tên sản phẩm và một nút "Thêm"
+Khi nhấn nút "Thêm" thì lấy tên mới nhập và đưa vào mảng.
+Hiển thị thông báo.
+Bước 6: Gọi hàm sửa một sản phẩm trong danh sách
+
+Tạo một form với một ô để hiển thị tên danh sách và một nút "Sửa"
+Khi nhấn vào một tên của sản phẩm trong danh sách thì hiển thị tên của nó ở trong ô tên danh sách
+Sau khi sửa tên và nhấn nút "Sửa" thì cập nhật lại tên của sản phẩm đó ở trong mảng
+Bước 7: Gọi hàm xoá một sản phẩm trong danh sách
+
+Khi nhấn vào nút "xoá" ở một sản phẩm, hãy tìm vị trí của sản phẩm đó trong danh sách
+Xoá sản phẩm đó trong danh sách
+Hiển thị lại bảng -->
+
+<div class="container">
+	<h2>Add new Product</h2>
+<div class="frddd">
+	<form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+     <input type="text" class="form-control" placeholder="Search">
+     </div>
+     <button type="submit" class="btn btn-success">Submit</button>
+     </form>
+</div>
+<!-- <div class="bb"><h3>Display All Product</h3> -->
+<!-- </div> -->
+<table class="table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Họ Tên</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td id="name">Văn Cường</td>
+                          	<td><button type="button" class="btn btn-success">Edit</button></td>
+                          	<td><button type="button" class="btn btn-success">Delete</button></td>
+                            
+                            
+                       <!--  </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Hoài Minh</td>
+                          	<td><button type="button" class="btn btn-success">Edit</button></td>
+                          	<td><button type="button" class="btn btn-success">Delete</button></td>
+                            
+                            
+ 
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Quốc Minh</td>
+                          	<td><button type="button" class="btn btn-success">Edit</button></td>
+                          	<td><button type="button" class="btn btn-success">Delete</button></td>
+                             -->
+                            
+ 
+                        </tr>
+                    </tbody>
+                </table>
+
+<script type="text/javascript">
+  let arr = ["Lê  Văn Nam", "Hoàng Thị yến","Cao Xuân Thanh","Lê Hoàng Hà","Nguyễn Thị Quý"];
+
+  function Product(name){
+    this.name = name;
+
+    this.show = function(){
+      document.getElementById("name")
+    }
+  };
+  let ProductList = new Array();
+
+  function initProductList(){
+    for(let i = 0; i< arr.length; i++){
+      let name = arr[i];
+      let sp = new Product(name);
+      ProductList[i] = sp;
+    }
+  }
+
+  function
+
+  function DeleteProduct(){
+
+  }
+  function EditProduct(){
+
+  }
+  function AddProduct(){
+
+  }
+</script>
+
+</div>
+</body>
+</html>

@@ -1,23 +1,27 @@
+<!-- HTML -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>good-fast-cheap</title>
-</head>
-<body>
-	<input type="checkbox" id="cgf_1"  onchange="onchange(2)">good
-	<input type="checkbox" id="cgf_2"  onchange="onchange(3)">cheap
-	<input type="checkbox" id="cgf_3"  onchange="onchange(1)">fast
-	<script type="text/javascript">
-		let count = 0;
-		function onchange(value){
-			count++;
-			if (count>2) {
-				let str = "cgf_"+value;
-				document.getElementById(str).checked = false;
-				count--;
-			}
-		}
-	</script>
-</body>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Checkbox Design</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <input type="checkbox" class="check good"
+      onchange="changed(this)">
+      <label for="good">Good</label><br>
+      <input type="checkbox" class="check fast"
+      onchange="changed(this)">
+      <label for="fast">Fast</label><br>
+      <input type="checkbox" class="check cheap"
+      onchange="changed(this)">
+      <label for="cheap">Cheap</label>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

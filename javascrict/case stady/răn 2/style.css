@@ -1,14 +1,14 @@
 canvas {
 	margin-left: 696px;
     position: absolute;
-    margin-top: 300px;
+    margin-top: 270px;
 	}
 	.menu{
 
 	}
 	.result {
 	
-margin-top: 304px;
+margin-top: 282px;
 	
 position: absolute;
 	
@@ -20,15 +20,15 @@ margin-left: 1012px;
 	}
 	.score {
 	
-margin-top: 329px;
+margin-top: 310px;
 	
 position: absolute;
 	
 color: red;
 	
-margin-left: 1024px;
+margin-left: 1027px;
 }
 img.img {
     width: 1510px;
-    height: 728px;
+    height: 669px;
 }

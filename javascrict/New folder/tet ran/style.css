@@ -1,0 +1,34 @@
+canvas {
+	margin-left: 696px;
+    position: absolute;
+    margin-top: 300px;
+	}
+	.menu{
+
+	}
+	.result {
+	
+margin-top: 304px;
+	
+position: absolute;
+	
+color: red;
+	
+font-family: sans-serif;
+	
+margin-left: 1012px;
+	}
+	.score {
+	
+margin-top: 329px;
+	
+position: absolute;
+	
+color: red;
+	
+margin-left: 1024px;
+}
+img.img {
+    width: 1510px;
+    height: 728px;
+}

@@ -1,17 +1,17 @@
 
-// -----------------------draw-------------------------------
 const canvas = document.querySelector(".canvas");
 const  ctx = canvas.getContext("2d");
 const scale = 10;
 const rows = canvas.height/scale;
 const columns = canvas.width/scale;
-let snake = [];
+let snake = [] ;
 let ground = new Image();
 ground.src = "img/ground.png";
+let head = new Image();
+head.src = "img/dau.png";
 let foodImg = new Image();
 foodImg.src = "img/food.png";
 let score = 0;
-// -------------------------------------------------
 let dead = new Audio();
 let eat = new Audio();
 let up = new Audio();
@@ -25,13 +25,12 @@ up.src = "audio/up.mp3";
 right.src = "audio/right.mp3";
 left.src = "audio/left.mp3";
 down.src = "audio/down.mp3";
-
-(function setup() {
+// -----------------------draw-------------------------------
+function setup() {
     snake = new Snake();
     food = new food();
     food.pickLocation();
-    // console.log(food);
-   let game = window.setInterval(() => {
+  window.setInterval(() => {
         ctx.clearRect(0,0,canvas.width,canvas.height);
         ctx.drawImage(ground,0,0,300,300)
         food.draw();
@@ -42,11 +41,10 @@ down.src = "audio/down.mp3";
             document.getElementById("point").innerHTML = snake.total;
         }
     },200);
-}());
+};
+setup();
 window.addEventListener('keydown',((evt) => {
-    // console.log(evt);
     const direction = evt.key.replace('Arrow','');
-    // console.log(direction);
     snake.changeDirection(direction);
 }));
 // ------------------------food-------------
@@ -55,16 +53,14 @@ function food() {
     this.y = 0;
     this.pickLocation = function () {
         this.x = (Math.floor(Math.random()* rows - 1)+1)* scale;
-        // console.log(this.x);
         this.y = (Math.floor(Math.random()* columns - 1)+1)* scale;
-        // console.log(this.y);
     };
     this.draw = function () {
         ctx.drawImage(foodImg,this.x,this.y,scale,scale);
     }
 }
 // ---------------------------snake--------------------------------------
-function Snake() {
+ function Snake() {
     this.x = 0;
     this.y = 0;
     this.xSpeed = 0;
@@ -76,12 +72,13 @@ function Snake() {
     this.draw = function () {
         ctx.fillStyle = "#ffffff";
         for (let i = 0; i< this.tail.length; i++){
-            ctx.fillRect(this.tail[i].x, this.tail[i].y, scale,scale);
-            // console.log(this.tail[i].x)
+            // ctx.fillRect(this.tail[i].x, this.tail[i].y, scale,scale);
+            ctx.drawImage(foodImg,this.tail[i].x,this.tail[i].y,scale,scale);
         }
-        ctx.fillRect(this.x, this.y, scale,scale);
+        // ctx.fillRect(this.x, this.y, scale,scale);
+        ctx.drawImage(head,this.x,this.y,scale,scale);
 
-    }
+    };
     this.update = function () {
         for (let i = 0; i < this.tail.length - 1; i++) {
             this.tail[i] = this.tail[i + 1];
@@ -90,18 +87,27 @@ function Snake() {
         this.x += this.xSpeed;
         this.y += this.ySpeed;
         if (this.x > canvas.width) {
-            this.x = 0;
+            dead.play();
+            alert("GAME OVER");
+            clearInterval(setup());
         }
         if (this.y > canvas.height) {
-            this.y = 0;
+            dead.play();
+            alert("GAME OVER");
+            clearInterval(setup());
         }
         if (this.x < 0) {
-            this.x = canvas.width;
+            dead.play();
+            alert("GAME OVER");
+            clearInterval(setup());
         }
         if (this.y < 0) {
-            this.y = canvas.height;
+            dead.play();
+            alert("GAME OVER");
+            clearInterval(setup());
         }
-    }
+        collision();
+    };
 
     this.changeDirection = function (direction) {
         switch (direction) {
@@ -142,7 +148,7 @@ function Snake() {
 
                 break;
         }
-    }
+    };
     this.eat = function (food) {
         if (this.x === food.x && this.y === food.y){
             this.total++;
@@ -156,7 +162,7 @@ function Snake() {
 // cheack collision function
 function isCollision(head,array){
     for(let i = 0; i < array.length; i++){
-        if(head.x === array[i].x && head.y === array[i].y){
+        if((snake.x === array[i].x && snake.y === array[i].y)){
             return true;
         }
     }
@@ -164,13 +170,10 @@ function isCollision(head,array){
 }
 // game over
 function collision() {
-    let newHead = {x: this.x, y:this.y};
-    console.log(newHead);
-    if (isCollision(this.tail,newHead) )
+    if (isCollision(snake.tail[0],snake.tail) )
     {
-        // clearInterval(game);
-        // dead.play();
-        alert("okok");
+        dead.play();
+        alert("GAME OVER");
+        clearInterval(setup());
     }
 }
-collision();

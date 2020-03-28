@@ -1,0 +1,14 @@
+.remote{
+	color: blue;
+	margin-left: 15%;
+	margin-top: 117px;
+	position: absolute;
+	/* border: 1px; */
+	border border-radius: 1px solid blue;
+	background-color: antiquewhite;
+	padding: 20px;
+}
+.tivi {
+    position: absolute;
+    margin-left: 50%;
+}

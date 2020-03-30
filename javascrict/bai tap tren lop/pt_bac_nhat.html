@@ -5,10 +5,11 @@
 	<title>Document</title>
 </head>
 <body>
-<button onclick="giaiPT">giai phuong trinh</button>
+<button onclick="giaiPT()">giai phuong trinh bac nhat</button>
 
 	<script type="text/javascript">
-		let a,b;
+		function giaiPT(){
+			let a,b;
 		a= prompt("Nhap a");
 		b= prompt("Nhap b");
 		a = Number.parseFloat(a);
@@ -19,6 +20,7 @@
 				 else alert("pt vo nghiem")
 	else 
 			alert("pt co nghiem X = " + -b/a);
+		}
 	</script>
 </body>
 </html>

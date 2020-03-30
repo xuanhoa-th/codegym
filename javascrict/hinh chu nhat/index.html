@@ -14,17 +14,17 @@
     this.width = width;
     this.x = x;
     this.y = y;
-    this.getDiameter = function () {
-        return (this.length + this.width) * 2;
-    }
+    // this.getDiameter = function () {
+    //     return (this.length + this.width) * 2;
+    // }
     this.setLong = function (x,y,length, width) {
         this.length = length;
         this.width = width;
     }
 
-    this.getArea = function () {
-        return this.length * this.width;
-    }
+    // this.getArea = function () {
+    //     return this.length * this.width;
+    // }
 
 
     this.createRectangle = function () {
@@ -35,15 +35,15 @@
         ctx.stroke();
 
     }
-    this.show = function () {
-    	let S = this.getArea();
-    	let P = this.getDiameter();
-        return 'Chu vi là : ' + P + "<br>"+' Diện tích là :' + S;
-    }
+    // this.show = function () {
+    // 	let S = this.getArea();
+    // 	let P = this.getDiameter();
+    //     return 'Chu vi là : ' + P + "<br>"+' Diện tích là :' + S;
+    // }
 }
 let rectangle = new Rectangle(50, 70, 200, 100);
-rectangle.createRectangle();
-rectangle.setLong( 10,50,50, 100);
+// rectangle.createRectangle();
+// rectangle.setLong( 10,50,50, 100);
 document.write(rectangle.show());
 </script>
 </html>

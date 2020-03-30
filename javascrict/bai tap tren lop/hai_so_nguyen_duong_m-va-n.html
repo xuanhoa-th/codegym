@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script>
+    //Nhập hai số nguyên dương m và n.
+    // 1) Tính tổng các giá trị chẵn từ m đến n
+    // 2) Tính tổng các giá trị các số chính phương từ m đến n
+    // BTVN 3) Tính tổng các giá trị các số nguyên tố từ m đến n
+
+    function kiemTraChinhPhuong(n){
+        //Một số là số chính phương nếu giá trị căn bậc hai của nó là số nguyên
+        return Number.isInteger(Math.sqrt(n));
+    }
+
+
+    function calSum(){
+        let m = document.getElementById("m");
+        m = Number.parseInt(m.value);
+
+        let n = document.getElementById("n");
+        n = Number.parseInt(n.value);
+
+        let s = 0, i;
+        for(i = m; i <= n; i++)
+            //if(i % 2 == 0)
+            if(kiemTraChinhPhuong(i))
+                s += i;
+        document.getElementById("sum").innerHTML = " " + s ;
+    }
+
+</script>
+</head>
+<body>
+<div>
+    <p>Nhập m: <input type="text" id="m" value="" onkeyup="calSum()"></p>
+    <p>Nhập n: <input type="text" id="n" value="" onkeyup="calSum()"></p>
+    <p>Tổng là <span id="sum"></span></p>
+</div>
+</body>
+</html>

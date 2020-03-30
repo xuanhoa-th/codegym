@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*Viết hàm tính giai thừa của một số nguyên dương
+        VD: 5! = 5*4*3*2*1 = 120
+        * */
+
+        /* Hàm tính giá trị giai thừa
+        * Input: n
+        * Output: n!
+        * Thuật toán không đệ quy
+        * */
+        function calFractorial(n)
+        {
+            let s = 1;
+            for(let i = 1; i<= n; i++)
+                s *= i;
+            return s;
+        }
+        /*
+        * 5! = 5 * 4! = 5 (4*3!)
+        * */
+
+        /* Hàm tính giá trị giai thừa
+        * Input: n (giá trị khởi tạo là 5)
+        * Output: n!
+        * Thuật toán đệ quy
+        * */
+        function calFractorialRec(n = 5){
+            if (n== 1)
+                return 1;
+            else
+                return n * calFractorialRec(n - 1);
+        }
+
+        function main(){
+            let n = +prompt("Nhập số nguyên dương:");
+            alert("Giá trị giai thừa là: "+ calFractorialRec());
+        }
+
+        main();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

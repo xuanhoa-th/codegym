@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            Nhập số phần tử của mảng.
+            Sinh ngẫu nhiên mảng
+            Tính tổng các phần tử của mảng
+        * */
+
+        /*---------- main ------------*/
+            let myArray = new Array();
+
+            alert(myArray.join());
+            initArray();
+            showArray();
+
+            console.log("Tổng là: " + calSum());
+
+           /*----------utility functions ------------*/
+            function initArray(){
+                let count = +prompt("Nhập số phần tử của mảng");
+                for(let i = 0; i< count; i++)
+                    //myArray.push(Math.round(1000*Math.random()));
+                    myArray["ABC"+ i] = Math.round(1000*Math.random());
+                myArray["ABC"] = 100;
+                alert("length: " + myArray.length);
+            }
+
+            function showArray(){
+                //for(let i = 0; i< myArray.length; i++)
+                   for(let x in myArray)
+                    console.log(x+ " : " +myArray[x]);
+                alert(myArray.join(":"));
+            }
+
+            function calSum(){
+                let sum = 0;
+                for(let i = 0; i< myArray.length; i++)
+                    sum += myArray[i];
+
+                return sum;
+            }
+
+    </script>
+</head>
+<body>
+
+
+
+</body>
+</html>

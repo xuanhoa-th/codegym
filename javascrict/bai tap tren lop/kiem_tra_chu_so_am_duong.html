@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<!-- <button onclick="giaiPT">nhap vao</button> -->
+
+	<script type="text/javascript">
+		let a;
+		a= prompt("Nhap a");
+		a = Number.parseFloat(a);
+		// if (a<=9999)
+		// 	if (a>0) alert("so duong")
+		// 		 else alert("so am")
+		// 		 	if (a<=9)
+		// 		 		alert("la so 1 chu so")
+		// 		 	else
+		// 		 		if(a<= 99) alert("co 2 chu so") 
+		// 		 			else
+		// 		 				if (a<= 999) alert("so 3 chu so")
+		// 		 					else
+		// 		 						if (a<= 9999) alert("co 4 chu so")
+
+		if(a<=9999){
+			if(a > 0){
+				alert(a + " Là số dương");
+				if(a<=9){
+					alert("Là số dương có 1 chứ số");
+				} else if(a<= 99){
+					alert("Là số dương có 2 chứ số");
+				} else if (a<= 999) {
+					alert("Là số dương có 3 chứ số");
+				} else if (a<= 9999) {
+					alert("Là số dương có 4 chứ số");
+				}
+			} else{
+				alert(a+ "Là số âm");
+				if(a >= -9){
+					alert("Là số âm có 1 chứ số");
+				} else if(a >= -99){
+					alert("Là số âm có 2 chứ số");
+				} else if (a >= -999) {
+					alert("Là số âm có 3 chứ số");
+				} else if (a >= -9999) {
+					alert("Là số âm có 4 chứ số");
+				}
+			}
+		}
+	</script>
+</body>
+</html>
